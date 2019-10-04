@@ -1,0 +1,28 @@
+<% var error; %>
+<!DOCTYPE html> 
+<html> 
+<%- include partials/header %> 
+<body> 
+    <div class="username container mt-5">
+        <div class="col-sm-4 mx-auto">
+            <div class="card bg-dark text-light">
+                <form action="/chat" id="user" class="form" method="post">  
+                    <div class="card-body form-group">
+                        <h5 class="card-title">Voer een gebruikersnaam in</h5>
+                        <p class="card-text"><input id="u" name="username" class="form-control" autocomplete="off" required/></p>
+                        <button class="btn btn-primary">Deelnemen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    </script>
+    <% if(error){ %>
+        <div class="alert alert-danger fixed-top">
+            <strong><%= error %></strong>
+        </div>
+    <% } %>
+</body> 
+</html>   

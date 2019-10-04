@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<style>
+body::-webkit-scrollbar { display: none; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; overflow: scroll; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; background-color: #36393F;}
+.chatbox form { padding: 3px; position: fixed; bottom: 0; width: 84%; background-color: #40444B; border-radius: 8px;}
+.chatbox form input { border: 0; padding: 10px; width: 100%; background-color: #40444B;}
+#chatbox { width: 84%; };
+#messages { list-style-type: none; margin: 0; padding: 0; width: 84%;}
+#messages li { padding: 5px 10px; }
+#messages li:nth-child(odd) { background: #eee; }
+#users::-webkit-scrollbar { display: none; }
+#users { position: fixed; top: 0; right: 0; height: 100%;  width: 15%; overflow-x: hidden; border: 2px solid black; background-color: #007bff;}
+#users .card { list-style: none; height: 100%; min-height: 100vh; text-align: center; background-color: #007bff;}
+#userExists,
+#emptyUsername { display: none; position: absolute; top: 0; width: 100%;}
+#test { margin-bottom: 0px;}
+a { list-style-type: none; }
+textarea:focus, input:focus{
+    outline: none;
+}
+input, select, textarea{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #dcddde;
+}
+.containerHeader {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.375em;
+}
+.containerContent {
+    color: #dcddde;
+}
+.time {
+    color: #72767d;
+    font-weight: 500;
+    font-size: 0.75rem;
+    margin-left: .3rem;
+}
+.containerMsgBox {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.hr-message {
+    border-bottom: 1px solid transparent;
+}
+</style>

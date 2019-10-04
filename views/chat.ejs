@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Home Page</title> 
+    <%- include partials/header %> 
+</head> 
+<body> 
+    <ul id="messages"></ul>
+
+    <div class="chatbox">
+        <ul id="messages"></ul>
+        <ul id="test"></ul>
+        <form action="" id="chat">
+            <div class="input-group">
+                <input id="m" autocomplete="off" placeholder="Bericht sturen naar chat"/>
+            </div>
+        </form>
+    </div>
+</body> 
+<script>
+    var socket = io();
+
+    $('#chat').submit(function (e){
+        e.preventDefault();
+        var message = $('#m').val(); 
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+    });
+
+    socket.on('chat message', function(data){
+        $('#messages').append($(
+        '<div class="containerMsgBox">' +
+            '<h2 class="containerHeader"><span class="containerUsername">' + data.userName + '</span>' +
+            '<time class="time"> ' + data.time + '</time></h2>' +
+            '<div class="containerContent">' + data.msg + '</div> ' + 
+        '</div>' +
+        '<hr class="hr-message">'
+        ));
+    });
+</script>
+
+</html>     
